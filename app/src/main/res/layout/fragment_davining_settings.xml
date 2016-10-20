@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <SwitchPreference
+        android:key="reminder.shacarit"
+        android:summary="@string/preferences_reminder_shacarit_summary"
+        android:title="@string/preferences_reminder_shacarit_text" />
+
+
+    <com.turel.jewishday.utils.TimePreference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="07:00"
+        android:key="reminder.shacarit.time"
+        android:title="@string/preferences_reminder_shacarit_time" />
+
+    <SwitchPreference
+        android:key="reminder.mincha"
+        android:summary="@string/preferences_reminder_mincha_summary"
+        android:title="@string/preferences_reminder_mincha_text" />
+
+
+    <com.turel.jewishday.utils.TimePreference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="14:00"
+        android:key="reminder.mincha.time"
+        android:title="@string/preferences_reminder_mincha_time" />
+
+    <SwitchPreference
+        android:key="reminder.arvit"
+        android:summary="@string/preferences_reminder_arvit_summary"
+        android:title="@string/preferences_reminder_arvit_text" />
+
+
+    <com.turel.jewishday.utils.TimePreference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="21:00"
+        android:key="reminder.arvit.time"
+        android:title="@string/preferences_reminder_arvit_time" />
+
+
+</PreferenceScreen>

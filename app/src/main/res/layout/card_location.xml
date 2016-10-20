@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Main Content View -->
+    <RelativeLayout
+        android:id="@+id/card_main_content_layout"
+        style="@style/card.content_outer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/card_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/map" />
+
+
+        <TextView
+            android:id="@+id/card_address"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/card_image"
+            android:layout_toRightOf="@id/card_image"
+            android:background="#cafae2"
+
+            android:text="address" />
+
+        <View
+            android:id="@+id/card_location_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/card_address"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/card_image"
+            android:layout_toRightOf="@id/card_image"
+            android:background="@android:color/darker_gray" />
+
+
+        <TextView
+            android:id="@+id/card_longitude"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/card_address"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@id/card_image"
+            android:text="long1"
+            android:textColor="@android:color/holo_green_light" />
+
+        <TextView
+            android:id="@+id/card_latitude"
+            android:layout_width="160dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/card_address"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/card_longitude"
+            android:layout_toRightOf="@id/card_longitude"
+            android:text="lat"
+            android:textColor="@android:color/holo_green_light" />
+
+        <TextView
+            android:id="@+id/card_timezone"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/card_latitude"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:text="timezone"
+            android:layout_toRightOf="@id/card_image"
+            android:textColor="@android:color/holo_green_light" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

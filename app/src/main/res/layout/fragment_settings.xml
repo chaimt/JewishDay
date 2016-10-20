@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <PreferenceCategory android:title="@string/preferences_application">
+        <CheckBoxPreference
+            android:key="application.notification"
+            android:summary="@string/preferences_display_notification_summary"
+            android:title="@string/preferences_display_notification_text"
+            android:defaultValue="true"/>
+
+        <CheckBoxPreference
+            android:key="smart.notification"
+            android:summary="@string/preferences_smart_notification_summary"
+            android:title="@string/preferences_smart_notification_text"
+            android:defaultValue="true"/>
+
+        <CheckBoxPreference
+            android:key="in.hebrew"
+            android:summary="@string/preferences_hebrew_summary"
+            android:title="@string/preferences_hebrew_text" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_reminders" >
+
+        <SwitchPreference
+            android:key="reminder.use"
+            android:summary="@string/use_alarms_description"
+            android:title="@string/use_alarms_text" />
+
+
+        <Preference
+            android:key="KEY_REMIND_DAV"
+            android:persistent="false"
+            android:title="@string/preferences_davining_reminders" />
+
+        <Preference
+            android:key="KEY_REMIND_DAY"
+            android:persistent="false"
+            android:title="@string/preferences_day_reminders" />
+
+        <Preference
+            android:key="key.next.alarm"
+            android:persistent="false"
+            android:title="@string/preferences_reminder_next_alarm" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="@string/preferences_location">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="location.israel"
+            android:summary="@string/preferences_israel_summary"
+            android:title="@string/preferences_israel_text" />
+
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

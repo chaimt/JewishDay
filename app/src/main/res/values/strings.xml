@@ -1,0 +1,180 @@
+<resources>
+    <string name="app_name">Jewish Day</string>
+    <string name="drawer_open">Menu opened</string>
+    <string name="drawer_close">Menu closed</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_title">Jewish Day</string>
+    <string name="menu_title_sub">Timely Information of the Day</string>
+    <string name="menu_zmanim">Zmanim</string>
+    <string name="menu_kotel">Mizrach</string>
+    <string name="menu_locations">Locations</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_about">About</string>
+
+    <!-- addres -->
+    <string name="address_none">None</string>
+    <string name="address_unknown">Unknown</string>
+    <!--Timezon form-->
+    <string name="zone_list_menu_sort_alphabetically">Sort Alphabetically</string>
+    <string name="zone_list_menu_sort_by_timezone">Sort By Timezone</string>
+
+    <!--Zmanim Form-->
+    <string name="allot_hashchar_text">Allot Hashacar</string>
+    <string name="allot_hashchar_description">72 Minutes before sunrise</string>
+
+
+    <string name="zmanim_morning">Morning Zmanim</string>
+    <string name="zmanim_afternoon">Afternoon Zmanim</string>
+    <string name="zmanim_global">Zmanai Hayom</string>
+    <string name="zmanim_shabbat">Zmanai Shabbat</string>
+    <string name="zmanim_special">Other</string>
+    <string name="zmanim_learn">Limud Yomi</string>
+
+
+    <string name="use_alarms_text">Enable Alarms</string>
+    <string name="use_alarms_description">Enable Alarm Reminders</string>
+
+    <string name="zman_tzizit_text">Zman Tizit</string>
+    <string name="zman_tzizit_description">Sun is 11.5 degress beloow the horizon.\r\n
+    You are allow to put on tephilin</string>
+    <string name="netz_hachama_text">Netz</string>
+    <string name="netz_hachama_description">Netz Hachamat</string>
+    <string name="tephilin_text">Tephilin</string>
+    <string name="tephilin_description">Mishiyakir Havero</string>
+    <string name="kiriyat_shema_text">Keriyat Shema</string>
+    <string name="kiriyat_shema_description">Last time for Keriyat Shema</string>
+    <string name="kiriyat_shema_gra_text">Keriyat Shema GRA</string>
+    <string name="kiriyat_shema_gra_description">Last time for Keriyat Shema According to GRA</string>
+    <string name="shacarit_text">Shacharit</string>
+    <string name="shacarit_description">Last time for Shacharit</string>
+    <string name="shacarit_gra_text">Shacharit GRA</string>
+    <string name="shacarit_gra_description">Last time for Shacharit According to GRA</string>
+    <string name="chaztot_text">Chazot</string>
+    <string name="chaztot_description">Chazot Hayom (Middle of day)</string>
+    <string name="mincha_gedola_text">Mincha Gedola</string>
+    <string name="mincha_gedola_description">Mincha Gedola</string>
+    <string name="plag_mincha_text">Plag Mincha</string>
+    <string name="plag_mincha_description">Plag Mincha</string>
+    <string name="shekia_text">Shekia</string>
+    <string name="shekia_description">Sunset</string>
+    <string name="tzet_hacochavim_text">Tzet Hachochavim</string>
+    <string name="tzet_hacochavim_description">Star Light</string>
+    <string name="tzet_hacochavim_shabat_text">Tzet Shabat</string>
+    <string name="candle_lighting_text">Candle Lighting</string>
+    <string name="candle_lighting_description">Candle Lighting For Shabbat (%d min offset)</string>
+    <string name="plag_mincha_shabat_text">Early Mincha needs to start before this time</string>
+    <string name="shekia_shabat_text">No Melacha allowed after</string>
+    <string name="daf_yomi">Daf Yomi</string>
+    <string name="daf_yomi_description">Babvli</string>
+
+
+    <string name="parsha_day">Weekly Parsha</string>
+    <string name="parsha_day_description">Weekly Parsha</string>
+    <string name="rosh_hodesh_day">Rosh Hodesh</string>
+    <string name="rosh_hodesh_day_description">Rosh Hodesh</string>
+
+    <string name="yomtov_day">YomTov</string>
+    <string name="yomtov_day_description">Information about day</string>
+    <string name="tanis_start">Tanis Start</string>
+    <string name="tanis_start_description">When to stop eating</string>
+    <string name="tanis_end">Tanis End</string>
+    <string name="tanis_end_description">Fast ended you may eat</string>
+
+    <string name="chanuka_day">Chanuka</string>
+    <string name="chanuka_day_description">Day of Chanunk</string>
+    <string name="omer_day">Omer</string>
+    <string name="omer_day_description">Day of Omer</string>
+
+
+    <!-- settings form -->
+    <string name="preferences_jewish_date">Jewish Date</string>
+
+    <string name="preferences_hebrew_text">Hebrew</string>
+    <string name="preferences_hebrew_summary">Force App to Hebrew</string>
+    <string name="preferences_specify_location_text">Specify Location</string>
+    <string name="preferences_specify_location_summary">Specify Location to Use</string>
+    <string name="preferences_location">Location</string>
+    <string name="preferences_latitude">Latitude</string>
+    <string name="preferences_latitude_summary">Latitude of current location</string>
+    <string name="preferences_longitude">Longitude</string>
+    <string name="preferences_longitude_summary">Longitude Of current Location</string>
+    <string name="preferences_altitude">Altitude</string>
+    <string name="preferences_altitude_summary">Altitude Of current Location</string>
+    <string name="preferences_address">Address</string>
+    <string name="preferences_address_summary">Estimation Address</string>
+    <string name="preferences_title">Title</string>
+
+    <string name="preferences_reminder_next_alarm">Next Reminder</string>
+
+    <string name="preferences_application">Application</string>
+    <string name="preferences_display_notification_text">Display Notification</string>
+    <string name="preferences_display_notification_summary">Display Status Notification</string>
+    <string name="preferences_smart_notification_text">Display Smart Notification</string>
+    <string name="preferences_smart_notification_summary">Display Day only after 3 day in month</string>
+
+    <string name="preferences_reminders">Reminders</string>
+    <string name="preferences_davining_reminders">Davining Reminders</string>
+    <string name="preferences_day_reminders">Day Time Reminders</string>
+    <string name="preferences_reminder_shacarit_summary">Reminder for Shacarit</string>
+    <string name="preferences_reminder_shacarit_text">Shacarit</string>
+    <string name="preferences_reminder_shacarit_time">Time to reminder me for Shacarit</string>
+    <string name="preferences_reminder_mincha_summary">Reminder for Mincha</string>
+    <string name="preferences_reminder_mincha_text">Mincha</string>
+    <string name="preferences_reminder_mincha_time">Time to reminder me for Mincha</string>
+    <string name="preferences_reminder_arvit_summary">Reminder for Arvit</string>
+    <string name="preferences_reminder_arvit_text">Arvit</string>
+    <string name="preferences_reminder_arvit_time">Time to reminder me for Arvit</string>
+
+
+    <string name="prefs_timezone_title">TimeZone</string>
+    <string name="prefs_timezone_summary">TimeZone</string>
+    <string name="preferences_use_gps_text">Use GPS</string>
+    <string name="preferences_use_gps_summary">Use GPS to fix Location</string>
+    <string name="preferences_israel_summary">Calculate according to Israel</string>
+    <string name="preferences_israel_text">In Israel</string>
+
+    <string name="preferences_reset_app">App needs to be restarted</string>
+    <string name="latitude_longitude">%1$.8f, %2$.8f</string>
+    <string name="play_services_available">Google Play services is available</string>
+    <string name="play_services_not_available">Google Play services not available</string>
+    <string name="location_disconnected">Location Service Disconnected</string>
+
+
+    <!--kotel form -->
+    <string name="jsl_distance">Distance: %.2f KM</string>
+    <string name="jsl_heading">Jerusalem Heading: %.2f degrees</string>
+    <string name="global_heading">Heading: %.2f degrees</string>
+
+    <!-- location -->
+    <string name="current_location">Current Location</string>
+    <string name="add_location">Add Location...</string>
+    <string name="delete_location">Delete Location</string>
+
+    <!--add location-->
+    <string name="location_title_caption">Title</string>
+    <string name="location_title_hint">Enter Title</string>
+    <string name="location_address_caption">Address</string>
+    <string name="location_address_hint">Enter Address</string>
+    <string name="location_longitude_caption">Longitude</string>
+    <string name="location_longitude_hint">Enter Longitude</string>
+    <string name="location_timzone_hint">Enter TimeZone (Format: GMT+2)</string>
+    <string name="location_latitude_caption">Latitude</string>
+    <string name="location_latitude_hint">Enter Latitude</string>
+    <string name="manual_location">Enter Manual Location</string>
+    <string name="using_location">Using </string>
+
+    <string name="error_longitude">Error in Longitude</string>
+    <string name="error_latitude">Error in Latitude</string>
+    <string name="error_timezone">Error in TimeZone</string>
+    <string name="error_title">Error in Title</string>
+    <string name="error_address">Error in Address</string>
+    <string name="error_global">Error</string>
+
+    <string name="kotel_shortcutShortLabel">Mizrach</string>
+    <string name="kotel_shortcutLongLabel">Find Mizrach</string>
+
+    <string name="zmanim_shortcutShortLabel">Zmanim</string>
+    <string name="zmanim_shortcutLongLabel">View Zmanim</string>
+
+</resources>

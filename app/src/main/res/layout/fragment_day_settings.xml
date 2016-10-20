@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <SwitchPreference
+        android:key="reminder.day.sunrise"
+        android:summary="@string/netz_hachama_description"
+        android:title="@string/netz_hachama_text" />
+
+
+    <SwitchPreference
+        android:key="reminder.day.shacarit"
+        android:summary="@string/shacarit_description"
+        android:title="@string/shacarit_text" />
+
+
+    <SwitchPreference
+        android:key="reminder.day.chazot"
+        android:summary="@string/chaztot_description"
+        android:title="@string/chaztot_text" />
+
+    <SwitchPreference
+        android:key="reminder.day.shekia"
+        android:summary="@string/shekia_description"
+        android:title="@string/shekia_text" />
+
+    <SwitchPreference
+        android:key="reminder.day.tzet.hacochavim"
+        android:summary="@string/tzet_hacochavim_description"
+        android:title="@string/tzet_hacochavim_text" />
+
+
+</PreferenceScreen>

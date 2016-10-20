@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.turel.jewishday" >
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACTION_TIMEZONE_CHANGED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:icon="@drawable/luach"
+        android:allowBackup="true"
+        android:name="com.turel.jewishday.utils.MainApp"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCyBc1yCfkDVLTWOgH2k-fNLW695z-YmbY"/>
+
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".OnetimeAlarmReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="SET_JEWISH_DATE"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+                <action android:name="android.intent.action.ACTION_DATE_CHANGED"></action>
+                <action android:name="android.intent.action.ACTION_TIME_CHANGED"></action>
+                <action android:name="android.intent.action.ACTION_TIMEZONE_CHANGED"></action>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".DayEventNotificationReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="JEWISH_REMINDER"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+                <action android:name="android.intent.action.ACTION_DATE_CHANGED"></action>
+                <action android:name="android.intent.action.ACTION_TIME_CHANGED"></action>
+                <action android:name="android.intent.action.ACTION_TIMEZONE_CHANGED"></action>
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="com.turel.jewishday.data.FetchAddressIntentService"
+            android:exported="false"/>
+    </application>
+
+</manifest>

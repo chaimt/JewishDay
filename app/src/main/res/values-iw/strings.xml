@@ -1,0 +1,181 @@
+<resources>
+    <string name="app_name">לוח יומי</string>
+    <string name="drawer_open">Menu opened</string>
+    <string name="drawer_close">Menu closed</string>
+    <string name="action_settings">אפשרויות</string>
+
+    <string name="menu_title">לוח יומי</string>
+    <string name="menu_title_sub">מידע על זמני היום</string>
+    <string name="menu_kotel">מזרח</string>
+    <string name="menu_zmanim">זמנים</string>
+    <string name="menu_locations">מיקומים</string>
+    <string name="menu_settings">אפשרויות</string>
+    <string name="menu_about">על האפליקציה</string>
+
+    <!-- addres -->
+    <string name="address_none">כלום</string>
+    <string name="address_unknown">לא יודע</string>
+    <!--Timezon form-->
+    <string name="zone_list_menu_sort_alphabetically">מיין אל פי שם</string>
+    <string name="zone_list_menu_sort_by_timezone">מיין על פי זמן</string>
+
+    <!--Zmanim Form-->
+    <string name="allot_hashchar_text">עלות השחר</string>
+    <string name="allot_hashchar_description">72 דקות לפני זריחה</string>
+
+    <string name="preferences_application">אפליקציה</string>
+    <string name="preferences_display_notification_text">הצג תאריך</string>
+    <string name="preferences_display_notification_summary">הצג תאריך בעדכונים</string>
+    <string name="preferences_smart_notification_text">הצג תאריך חכם</string>
+    <string name="preferences_smart_notification_summary">הצג יום בלבד לאחר ג בחודש</string>
+
+    <string name="preferences_reminders">תזכורות</string>
+    <string name="preferences_davining_reminders">תזכורת תפילות</string>
+    <string name="preferences_day_reminders">תזכורת זמני היום</string>
+
+    <string name="preferences_reminder_shacarit_summary">תזכורת לשחרית</string>
+    <string name="preferences_reminder_shacarit_text">שחרית</string>
+    <string name="preferences_reminder_shacarit_time">שעה לתזכורת לתפילת שחרית</string>
+    <string name="preferences_reminder_mincha_summary">תזכורת למנחה</string>
+    <string name="preferences_reminder_mincha_text">מנחה</string>
+    <string name="preferences_reminder_mincha_time">שעה לתזכורת לתפילת מנחה</string>
+    <string name="preferences_reminder_arvit_summary">תזכורת לערבית</string>
+    <string name="preferences_reminder_arvit_text">ערבית</string>
+    <string name="preferences_reminder_arvit_time">שעה לתזכורת לתפילת ערבית</string>
+
+    <string name="preferences_reminder_next_alarm">תזכורת הבאה</string>
+
+    <string name="zmanim_morning">זמני הבוקר</string>
+    <string name="zmanim_afternoon">זמני הצהרים</string>
+    <string name="zmanim_global">זמני היום</string>
+    <string name="zmanim_shabbat">זמני השבת</string>
+    <string name="zmanim_special">אחר</string>
+    <string name="zmanim_learn">לימוד יומי</string>
+
+
+    <string name="use_alarms_text">הפעל תזכורות</string>
+    <string name="use_alarms_description">הפעל תזכורות יומיות</string>
+
+    <string name="zman_tzizit_text">זמן ציצית</string>
+    <string name="zman_tzizit_description">Sun is 11.5 degress beloow the horizon.\r\n
+    You are allow to put on tephilin</string>
+    <string name="netz_hachama_text">נץ החמה</string>
+    <string name="netz_hachama_description">רגע שבו נראית בוודאות הנקודה הראשונה מגוף השמש</string>
+    <string name="tephilin_text">זמן הנחת תפילין</string>
+    <string name="tephilin_description">משיכיר חברו</string>
+    <string name="kiriyat_shema_text">קריאת שמע</string>
+    <string name="kiriyat_shema_description">זמן אחרון לקריאת שמע</string>
+    <string name="kiriyat_shema_gra_text">קריאת שמע - גר"א</string>
+    <string name="kiriyat_shema_gra_description">זמן אחרון לקריאת שמע על פי הגר"א</string>
+    <string name="shacarit_text">שחרית</string>
+    <string name="shacarit_description">זמן אחרון לתפילת העמידה</string>
+    <string name="shacarit_gra_text">שחרית - גר"א</string>
+    <string name="shacarit_gra_description">זמן אחרון לקריאת שמע על פי הגר"א</string>
+    <string name="chaztot_text">חצות</string>
+    <string name="chaztot_description">חצות היום</string>
+    <string name="mincha_gedola_text">מנחה גדולה</string>
+    <string name="mincha_gedola_description">מנחה גדולה</string>
+    <string name="plag_mincha_text">פלג מנחה</string>
+    <string name="plag_mincha_description">תיחום הרבע האחרון של היום</string>
+    <string name="shekia_text">שקיעה</string>
+    <string name="shekia_description">שקיעה</string>
+    <string name="tzet_hacochavim_text">צאת הכוכבים</string>
+    <string name="tzet_hacochavim_description">צאת הכוכבים</string>
+    <string name="tzet_hacochavim_shabat_text">צאת שבת</string>
+
+    <string name="candle_lighting_text">הדלקת נרות</string>
+    <string name="candle_lighting_description">הדלקת נרות שבת (%s דקות)</string>
+    <string name="plag_mincha_shabat_text">יש להתחיל מנחה מוקדמת לפני זמן זה</string>
+    <string name="shekia_shabat_text">איסור מלאכה משעה זו</string>
+    <string name="daf_yomi">דף יומי</string>
+    <string name="daf_yomi_description">בבלי</string>
+
+
+    <string name="parsha_day">פרשת השבוע</string>
+    <string name="parsha_day_description">פרשת השבוע</string>
+    <string name="rosh_hodesh_day">ראש חודש</string>
+    <string name="rosh_hodesh_day_description">ראש חודש</string>
+
+    <string name="yomtov_day">יום טוב</string>
+    <string name="yomtov_day_description">מידע על הימים הטובים</string>
+    <string name="tanis_start">תחלת תענית</string>
+    <string name="tanis_start_description">זמן הפסקת אכילה</string>
+    <string name="tanis_end">סוף תענית</string>
+    <string name="tanis_end_description">זמן היתר אכילה</string>
+
+    <string name="chanuka_day">חנוכה</string>
+    <string name="chanuka_day_description">יום של חנוכה</string>
+    <string name="omer_day">עומר</string>
+    <string name="omer_day_description">ספירת העומר</string>
+
+
+    <!-- settings form -->
+    <string name="preferences_jewish_date">תאריך עברי</string>
+
+    <string name="preferences_hebrew_text">עברית</string>
+    <string name="preferences_hebrew_summary">העבר אפליקציה לעברית</string>
+    <string name="preferences_specify_location_text">בחר מיקום</string>
+    <string name="preferences_specify_location_summary">בחר מיקום לשימוש</string>
+    <string name="preferences_location">מיקום</string>
+    <string name="preferences_latitude">רוחב</string>
+    <string name="preferences_latitude_summary">רוחב המיקום</string>
+    <string name="preferences_longitude">אורך</string>
+    <string name="preferences_longitude_summary">אורך המיקום</string>
+    <string name="preferences_altitude">גובה</string>
+    <string name="preferences_altitude_summary">גובה של מיקום</string>
+    <string name="preferences_address">כתובת</string>
+    <string name="preferences_address_summary">כתובת משוערת</string>
+    <string name="preferences_title">כותרת</string>
+
+    <string name="prefs_timezone_title">אזור זמן</string>
+    <string name="prefs_timezone_summary">אזור זמן</string>
+    <string name="preferences_use_gps_text">גי.פי. אס</string>
+    <string name="preferences_use_gps_summary">חישוב מיקום על פי גי.פי. אס</string>
+    <string name="preferences_israel_summary">חישוב על פי ישראל</string>
+    <string name="preferences_israel_text">חגי ישראל</string>
+
+    <string name="preferences_reset_app">יש להפעיל תוכנה מחדש</string>
+    <string name="latitude_longitude">%1$.8f, %2$.8f</string>
+    <string name="play_services_available">Google Play services is available</string>
+    <string name="play_services_not_available">Google Play services not available</string>
+    <string name="location_disconnected">Location Service Disconnected</string>
+
+    <!--kotel form -->
+    <string name="jsl_distance">מרחק: %.2f ק"מ</string>
+    <string name="jsl_heading">לירושלים: %.2f מעלות</string>
+    <string name="global_heading">כיון: %.2f מעלות</string>
+
+    <!-- location -->
+    <string name="current_location">מקום נוכחי</string>
+    <string name="add_location">הוסף מיקום...</string>
+    <string name="delete_location">מחק מיקום</string>
+
+    <!-- location -->
+    <string name="location_title_caption">כותרת</string>
+    <string name="location_title_hint">הכנס כותרת</string>
+    <string name="location_address_caption">כתובת</string>
+    <string name="location_address_hint">הכנס כתובת</string>
+    <string name="location_longitude_caption">קו אורך</string>
+    <string name="location_longitude_hint">הכנס קו אורך</string>
+    <string name="location_timzone_hint">Enter TimeZone (Format: GMT+2)</string>
+    <string name="location_latitude_caption">קו רוחב</string>
+    <string name="location_latitude_hint">הכנס קו רוחב</string>
+    <string name="manual_location">Enter Manual Location</string>
+    <string name="using_location">משתמש ב  </string>
+
+    <string name="error_longitude">שגיעה בקו אורך</string>
+    <string name="error_latitude">שגיעה בקו רוחב</string>
+    <string name="error_timezone">שגיעה בזמן</string>
+    <string name="error_title">שגיעה בכותרת</string>
+    <string name="error_address">שגיעה בכתובת</string>
+    <string name="error_global">שגיעה</string>
+
+    <string name="kotel_shortcutShortLabel">מזרח</string>
+    <string name="kotel_shortcutLongLabel">למצוא מזרח</string>
+
+    <string name="zmanim_shortcutShortLabel">זמנים</string>
+    <string name="zmanim_shortcutLongLabel">צפיה לזמנים</string>
+
+
+
+</resources>

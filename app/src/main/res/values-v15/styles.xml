@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="textMargins">
+        <!-- Customize your theme here. -->
+        <item name="android:layout_marginLeft">70dp</item>
+    </style>
+
+
+</resources>
