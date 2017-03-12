@@ -186,7 +186,14 @@ public class ZmanimCardLight extends CardWithList {
                         break;
                 }
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.tephilin_text), res.getString(R.string.tephilin_description), displayDate(czc.getMisheyakir11Point5Degrees())));
-                mObjects.add(new ZmanimObject(this, res.getString(R.string.netz_hachama_text), res.getString(R.string.netz_hachama_description), displayDate(czc.getSunrise())));
+                int sunrisePos = Integer.valueOf(preferences.getString("options.sunrise", "1"));
+                if (sunrisePos==1){
+                    mObjects.add(new ZmanimObject(this, res.getString(R.string.netz_hachama_text), res.getString(R.string.netz_hachama_description), displayDate(czc.getSeaLevelSunrise())));
+                }
+                else{
+                    mObjects.add(new ZmanimObject(this, res.getString(R.string.netz_hachama_text), res.getString(R.string.netz_hachama_description), displayDate(czc.getSunrise())));
+                }
+
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.kiriyat_shema_text), res.getString(R.string.kiriyat_shema_description), displayDate(czc.getSofZmanShmaMGA())));
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.kiriyat_shema_gra_text), res.getString(R.string.kiriyat_shema_gra_description), displayDate(czc.getSofZmanShmaGRA())));
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.shacarit_text), res.getString(R.string.shacarit_description), displayDate(czc.getSofZmanTfilaGRA())));

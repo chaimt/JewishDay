@@ -14,4 +14,14 @@
         <item>120 דקות לפני חצות</item>
     </string-array>
 
+    <string-array name="netz_hachama_entry_list">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="netz_hachama_entry_values">
+        <item>הנץ במישור</item>
+        <item>הנץ הנראה</item>
+    </string-array>
+
+
 </resources>

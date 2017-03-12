@@ -14,4 +14,14 @@
         <item>120 minutes before sunrise</item>
     </string-array>
 
+    <string-array name="netz_hachama_entry_list">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="netz_hachama_entry_values">
+        <item>Sea Level</item>
+        <item>Observed Level</item>
+    </string-array>
+
+
 </resources>

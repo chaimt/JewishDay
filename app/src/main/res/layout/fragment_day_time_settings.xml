@@ -4,13 +4,20 @@
     android:layout_height="match_parent">
 
     <ListPreference
-        android:defaultValue="2"
+        android:defaultValue="72"
         android:key="options.alothashacr"
         android:title="@string/allot_hashchar_text"
         android:summary="@string/allot_hashchar_general_description"
         android:entries="@array/alothashacr_entry_list"
         android:entryValues="@array/alothashacr_entry_values" />
 
+    <ListPreference
+        android:defaultValue="72"
+        android:key="options.sunrise"
+        android:title="@string/netz_hachama_text"
+        android:summary="@string/netz_hachama_description"
+        android:entries="@array/netz_hachama_entry_list"
+        android:entryValues="@array/netz_hachama_entry_values" />
 
 
 </PreferenceScreen>
