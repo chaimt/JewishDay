@@ -40,6 +40,7 @@
             android:persistent="false"
             android:title="@string/preferences_day_reminders" />
 
+
         <Preference
             android:key="key.next.alarm"
             android:persistent="false"
@@ -47,7 +48,12 @@
     </PreferenceCategory>
 
 
-    <PreferenceCategory android:title="@string/preferences_location">
+    <PreferenceCategory android:title="@string/preferences_options">
+
+        <Preference
+            android:key="KEY_ZMAIN_OPTIONS"
+            android:persistent="false"
+            android:title="@string/preferences_day_settings" />
 
         <CheckBoxPreference
             android:defaultValue="true"

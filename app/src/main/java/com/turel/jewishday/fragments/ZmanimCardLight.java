@@ -38,9 +38,6 @@ import it.gmariotti.cardslib.library.prototypes.CardWithList;
  * Created by Haim.Turkel on 7/28/2015.
  */
 public class ZmanimCardLight extends CardWithList {
-
-
-
     public enum CardType {
         Global, Morning, Afternoon, Shabbat, Special
     }
@@ -108,15 +105,6 @@ public class ZmanimCardLight extends CardWithList {
                 });
         }
         return header;
-        /*
-        switch (cardType){
-            case Morning: return new CardHeader(getContext(),R.layout.card_header_morning);
-            case Afternoon: return new CardHeader(getContext(),R.layout.card_header_afternoon);
-            case Shabbat: return new CardHeader(getContext(),R.layout.card_header_shabbat);
-            default:
-                return new CardHeader(getContext());
-        }
-        */
     }
 
     @Override
@@ -136,6 +124,9 @@ public class ZmanimCardLight extends CardWithList {
 
     @Override
     protected List<ListObject> initChildren() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+
+
         currentAddress = AppSettings.getInstance().getAddressInfo();
         List<ListObject> mObjects = new ArrayList<>();
 
@@ -151,8 +142,6 @@ public class ZmanimCardLight extends CardWithList {
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.preferences_jewish_date), "", formatter.format(jewishCalendar)));
                 Calendar friday = Calendar.getInstance();
                 friday.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
-//                SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
-//                String Stringtt = f.format(friday);
                 JewishCalendar fridayJewish = new JewishCalendar(friday);
                 fridayJewish.setInIsrael(AppSettings.getInstance().isHebrewFormat());
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.parsha_day), res.getString(R.string.parsha_day_description), formatter.formatParsha(fridayJewish)));
@@ -180,8 +169,22 @@ public class ZmanimCardLight extends CardWithList {
             case Morning:
                 getCardHeader().setTitle(res.getString(R.string.zmanim_morning));
 
-
-                mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), res.getString(R.string.allot_hashchar_description), displayDate(czc.getAlosHashachar())));
+                int alothashacr = Integer.valueOf(preferences.getString("options.alothashacr", "60"));
+                String description = String.format(res.getString(R.string.allot_hashchar_description), alothashacr);
+                switch (alothashacr){
+                    case 60:
+                        mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), description, displayDate(czc.getAlos60())));
+                        break;
+                    case 72:
+                        mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), description, displayDate(czc.getAlos72())));
+                        break;
+                    case 90:
+                        mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), description, displayDate(czc.getAlos90())));
+                        break;
+                    case 120:
+                        mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), description, displayDate(czc.getAlos120())));
+                        break;
+                }
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.tephilin_text), res.getString(R.string.tephilin_description), displayDate(czc.getMisheyakir11Point5Degrees())));
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.netz_hachama_text), res.getString(R.string.netz_hachama_description), displayDate(czc.getSunrise())));
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.kiriyat_shema_text), res.getString(R.string.kiriyat_shema_description), displayDate(czc.getSofZmanShmaMGA())));
@@ -226,10 +229,8 @@ public class ZmanimCardLight extends CardWithList {
 
         TextView name = (TextView) convertView.findViewById(R.id.zmanim_name);
         TextView time = (TextView) convertView.findViewById(R.id.zmanim_time);
-//        ImageView icon = (ImageView) convertView.findViewById(R.id.zmanim_img);
 
         ZmanimObject zman = (ZmanimObject) object;
-        //icon.setImageResource(weatherObject.weatherIcon);
         name.setText(zman.getName());
         time.setText(zman.getTime());
 

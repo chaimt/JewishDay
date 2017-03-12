@@ -31,22 +31,22 @@
         <receiver android:name=".OnetimeAlarmReceiver"
             android:enabled="true">
             <intent-filter>
-                <action android:name="SET_JEWISH_DATE"></action>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
-                <action android:name="android.intent.action.ACTION_DATE_CHANGED"></action>
-                <action android:name="android.intent.action.ACTION_TIME_CHANGED"></action>
-                <action android:name="android.intent.action.ACTION_TIMEZONE_CHANGED"></action>
+                <action android:name="SET_JEWISH_DATE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.ACTION_DATE_CHANGED"/>
+                <action android:name="android.intent.action.ACTION_TIME_CHANGED"/>
+                <action android:name="android.intent.action.ACTION_TIMEZONE_CHANGED"/>
             </intent-filter>
         </receiver>
 
         <receiver android:name=".DayEventNotificationReceiver"
             android:enabled="true">
             <intent-filter>
-                <action android:name="JEWISH_REMINDER"></action>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
-                <action android:name="android.intent.action.ACTION_DATE_CHANGED"></action>
-                <action android:name="android.intent.action.ACTION_TIME_CHANGED"></action>
-                <action android:name="android.intent.action.ACTION_TIMEZONE_CHANGED"></action>
+                <action android:name="JEWISH_REMINDER"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.ACTION_DATE_CHANGED"/>
+                <action android:name="android.intent.action.ACTION_TIME_CHANGED"/>
+                <action android:name="android.intent.action.ACTION_TIMEZONE_CHANGED"/>
             </intent-filter>
         </receiver>
         <service

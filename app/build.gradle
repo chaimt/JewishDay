@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
 
 //    dataBinding {
 //        enabled = true
@@ -11,10 +11,10 @@ android {
 
     defaultConfig {
         applicationId "com.turel.jewishday"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 25
-        versionCode 26
-        versionName "2.6"
+        versionCode 27
+        versionName "2.7"
         multiDexEnabled true
 
         //ADD THIS LINE:
@@ -58,15 +58,16 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.android.support:support-v4:25.0.0'
-    compile 'com.android.support:design:25.0.0'
-    compile 'com.android.support:recyclerview-v7:25.0.0'
-    compile 'com.google.android.gms:play-services:9.6.1'
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:support-v4:25.2.0'
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:recyclerview-v7:25.2.0'
+    compile 'com.google.android.gms:play-services-places:10.2.0'
+    compile 'com.google.android.gms:play-services-location:10.2.0'
     compile 'com.github.gabrielemariotti.cards:cardslib-core:2.1.0'
     compile 'com.github.machinarius:preferencefragment:0.1.2'
     compile 'com.yalantis:phoenix:1.2.3'
-    compile 'joda-time:joda-time:2.9.1'
+    compile 'joda-time:joda-time:2.9.7'
 
 
     // Unit testing dependencies

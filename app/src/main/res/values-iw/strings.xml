@@ -21,7 +21,8 @@
 
     <!--Zmanim Form-->
     <string name="allot_hashchar_text">עלות השחר</string>
-    <string name="allot_hashchar_description">72 דקות לפני זריחה</string>
+    <string name="allot_hashchar_description">%d דקות לפני זריחה</string>
+    <string name="allot_hashchar_general_description">X דקות לפני זריחה</string>
 
     <string name="preferences_application">אפליקציה</string>
     <string name="preferences_display_notification_text">הצג תאריך</string>
@@ -32,6 +33,7 @@
     <string name="preferences_reminders">תזכורות</string>
     <string name="preferences_davining_reminders">תזכורת תפילות</string>
     <string name="preferences_day_reminders">תזכורת זמני היום</string>
+    <string name="preferences_day_settings">הגדרת זמני היום</string>
 
     <string name="preferences_reminder_shacarit_summary">תזכורת לשחרית</string>
     <string name="preferences_reminder_shacarit_text">שחרית</string>
@@ -116,7 +118,7 @@
     <string name="preferences_hebrew_summary">העבר אפליקציה לעברית</string>
     <string name="preferences_specify_location_text">בחר מיקום</string>
     <string name="preferences_specify_location_summary">בחר מיקום לשימוש</string>
-    <string name="preferences_location">מיקום</string>
+    <string name="preferences_options">אפשרויות</string>
     <string name="preferences_latitude">רוחב</string>
     <string name="preferences_latitude_summary">רוחב המיקום</string>
     <string name="preferences_longitude">אורך</string>

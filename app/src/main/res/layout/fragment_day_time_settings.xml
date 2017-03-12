@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListPreference
+        android:defaultValue="2"
+        android:key="options.alothashacr"
+        android:title="@string/allot_hashchar_text"
+        android:summary="@string/allot_hashchar_general_description"
+        android:entries="@array/alothashacr_entry_list"
+        android:entryValues="@array/alothashacr_entry_values" />
+
+
+
+</PreferenceScreen>

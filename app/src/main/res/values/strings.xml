@@ -21,7 +21,8 @@
 
     <!--Zmanim Form-->
     <string name="allot_hashchar_text">Allot Hashacar</string>
-    <string name="allot_hashchar_description">72 Minutes before sunrise</string>
+    <string name="allot_hashchar_description">%s Minutes before sunrise</string>
+    <string name="allot_hashchar_general_description">X Minutes before sunrise</string>
 
 
     <string name="zmanim_morning">Morning Zmanim</string>
@@ -94,7 +95,7 @@
     <string name="preferences_hebrew_summary">Force App to Hebrew</string>
     <string name="preferences_specify_location_text">Specify Location</string>
     <string name="preferences_specify_location_summary">Specify Location to Use</string>
-    <string name="preferences_location">Location</string>
+    <string name="preferences_options">Options</string>
     <string name="preferences_latitude">Latitude</string>
     <string name="preferences_latitude_summary">Latitude of current location</string>
     <string name="preferences_longitude">Longitude</string>
@@ -116,6 +117,7 @@
     <string name="preferences_reminders">Reminders</string>
     <string name="preferences_davining_reminders">Davining Reminders</string>
     <string name="preferences_day_reminders">Day Time Reminders</string>
+    <string name="preferences_day_settings">Day Time Settings</string>
     <string name="preferences_reminder_shacarit_summary">Reminder for Shacarit</string>
     <string name="preferences_reminder_shacarit_text">Shacarit</string>
     <string name="preferences_reminder_shacarit_time">Time to reminder me for Shacarit</string>

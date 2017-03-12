@@ -22,6 +22,7 @@ public class PreferencesScreen extends PreferenceFragment  implements  Preferenc
 
     private static final String KEY_REMIND_DAV = "KEY_REMIND_DAV";
     private static final String KEY_REMIND_DAY = "KEY_REMIND_DAY";
+    private static final String KEY_ZMAIN_OPTIONS = "KEY_ZMAIN_OPTIONS";
 
     private static final String TAG_NESTED = "TAG_NESTED";
 
@@ -45,11 +46,15 @@ public class PreferencesScreen extends PreferenceFragment  implements  Preferenc
                     addToBackStack(null).
                     commit();
         }
-
+        else if (preference.getKey().equals(KEY_ZMAIN_OPTIONS)) {
+            getActivity().
+                    getSupportFragmentManager().beginTransaction().
+                    replace(R.id.container, NestedPreferenceFragment.newInstance(NestedPreferenceFragment.NESTED_SCREEN_DAY_SETTINGS), TAG_NESTED).
+                    addToBackStack(null).
+                    commit();
+        }
         return false;
-
     }
-
 
     public static final String APPLICATION_NOTIFICATION_KEY = "application.notification";
     public static final String SMART_NOTIFICATION_KEY = "smart.notification";
@@ -126,6 +131,10 @@ public class PreferencesScreen extends PreferenceFragment  implements  Preferenc
         final Preference preferenceDay = findPreference(KEY_REMIND_DAY);
         preferenceDay.setOnPreferenceClickListener(this);
         preferenceDay.setEnabled(remindUse);
+
+        final Preference preferenceDaySettings = findPreference(KEY_ZMAIN_OPTIONS);
+        preferenceDaySettings.setOnPreferenceClickListener(this);
+
 
 
         preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {

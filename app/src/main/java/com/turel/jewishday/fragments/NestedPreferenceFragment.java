@@ -19,6 +19,7 @@ public class NestedPreferenceFragment extends PreferenceFragment {
 
     public static final int NESTED_SCREEN_REMIND_DAV = 1;
     public static final int NESTED_SCREEN_REMIND_DAY = 2;
+    public static final int NESTED_SCREEN_DAY_SETTINGS = 3;
 
     private static final String TAG_KEY = "NESTED_KEY";
 
@@ -117,20 +118,25 @@ public class NestedPreferenceFragment extends PreferenceFragment {
                 addPreferencesFromResource(R.layout.fragment_day_settings);
                 break;
 
+            case NESTED_SCREEN_DAY_SETTINGS:
+                addPreferencesFromResource(R.layout.fragment_day_time_settings);
+                break;
+
             default:
                 break;
         }
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        setupTimePicker(prefs,SCHARAIT_SWITCH, SCHARAIT_TIME,"7:00");
-        setupTimePicker(prefs,MINCHA_SWITCH, MINCHA_TIME,"14:00");
-        setupTimePicker(prefs,ARVIT_SWITCH, ARVIT_TIME,"21:00");
+        if (key==NESTED_SCREEN_REMIND_DAV || key==NESTED_SCREEN_REMIND_DAY) {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            setupTimePicker(prefs, SCHARAIT_SWITCH, SCHARAIT_TIME, "7:00");
+            setupTimePicker(prefs, MINCHA_SWITCH, MINCHA_TIME, "14:00");
+            setupTimePicker(prefs, ARVIT_SWITCH, ARVIT_TIME, "21:00");
 
-        setupSwicth(DAY_SUNRISE_SWITCH);
-        setupSwicth(DAY_SCHARAIT_SWITCH);
-        setupSwicth(DAY_CHAZTOT_SWITCH);
-        setupSwicth(DAY_SHEKIA_SWITCH);
-        setupSwicth(DAY_TZET_SWITCH);
-
+            setupSwicth(DAY_SUNRISE_SWITCH);
+            setupSwicth(DAY_SCHARAIT_SWITCH);
+            setupSwicth(DAY_CHAZTOT_SWITCH);
+            setupSwicth(DAY_SHEKIA_SWITCH);
+            setupSwicth(DAY_TZET_SWITCH);
+        }
 
     }
 
