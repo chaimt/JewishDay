@@ -16,8 +16,31 @@
         android:key="options.sunrise"
         android:title="@string/netz_hachama_text"
         android:summary="@string/netz_hachama_description"
-        android:entries="@array/netz_hachama_entry_list"
-        android:entryValues="@array/netz_hachama_entry_values" />
+        android:entries="@array/sun_level_entry_list"
+        android:entryValues="@array/sun_level_entry_values" />
 
+    <ListPreference
+        android:defaultValue="1"
+        android:key="options.zmain.tephila"
+        android:title="@string/zman_tephila_text"
+        android:summary="@string/zman_tephila_description"
+        android:entries="@array/zman_tephila_entry_list"
+        android:entryValues="@array/zman_tephila_entry_values" />
+
+    <ListPreference
+        android:defaultValue="1"
+        android:key="options.plag.mincha"
+        android:title="@string/plag_mincha_text"
+        android:summary="@string/plag_mincha_description"
+        android:entries="@array/plag_mincha_entry_list"
+        android:entryValues="@array/plag_mincha_entry_values" />
+
+    <ListPreference
+        android:defaultValue="1"
+        android:key="options.sunset"
+        android:title="@string/shekia_text"
+        android:summary="@string/shekia_description"
+        android:entries="@array/sun_level_entry_list"
+        android:entryValues="@array/sun_level_entry_values" />
 
 </PreferenceScreen>

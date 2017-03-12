@@ -15,12 +15,36 @@
     </string-array>
 
     <string-array name="netz_hachama_entry_list">
+        <item>הנץ במישור</item>
+        <item>הנץ הנראה</item>
+    </string-array>
+    <string-array name="netz_hachama_entry_values">
         <item>1</item>
         <item>2</item>
     </string-array>
-    <string-array name="netz_hachama_entry_values">
-        <item>הנץ במישור</item>
-        <item>הנץ הנראה</item>
+
+    <string-array name="zman_tephila_entry_list">
+        <item>מגן אברהם</item>
+        <item>גר״א</item>
+    </string-array>
+    <string-array name="zman_tephila_entry_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="plag_mincha_entry_list">
+        <item>60</item>
+        <item>72</item>
+        <item>90</item>
+        <item>96</item>
+        <item>120</item>
+    </string-array>
+    <string-array name="plag_mincha_entry_values">
+        <item>60</item>
+        <item>72</item>
+        <item>90</item>
+        <item>96</item>
+        <item>120</item>
     </string-array>
 
 

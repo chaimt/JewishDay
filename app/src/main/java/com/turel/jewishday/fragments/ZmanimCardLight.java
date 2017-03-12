@@ -20,6 +20,7 @@ import net.sourceforge.zmanim.ComplexZmanimCalendar;
 import net.sourceforge.zmanim.hebrewcalendar.Daf;
 import net.sourceforge.zmanim.hebrewcalendar.HebrewDateFormatter;
 import net.sourceforge.zmanim.hebrewcalendar.JewishCalendar;
+import net.sourceforge.zmanim.hebrewcalendar.JewishDate;
 import net.sourceforge.zmanim.hebrewcalendar.YomiCalculator;
 
 import java.text.DecimalFormat;
@@ -38,6 +39,13 @@ import it.gmariotti.cardslib.library.prototypes.CardWithList;
  * Created by Haim.Turkel on 7/28/2015.
  */
 public class ZmanimCardLight extends CardWithList {
+
+    public static final String OPTIONS_SUNSET = "options.sunset";
+    public static final String OPTIONS_PLAG_MINCHA = "options.plag.mincha";
+    public static final String OPTIONS_ZMAIN_TEPHILA = "options.zmain.tephila";
+    public static final String OPTIONS_SUNRISE = "options.sunrise";
+    public static final String OPTIONS_ALOTHASHACR = "options.alothashacr";
+
     public enum CardType {
         Global, Morning, Afternoon, Shabbat, Special
     }
@@ -126,7 +134,6 @@ public class ZmanimCardLight extends CardWithList {
     protected List<ListObject> initChildren() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-
         currentAddress = AppSettings.getInstance().getAddressInfo();
         List<ListObject> mObjects = new ArrayList<>();
 
@@ -165,52 +172,54 @@ public class ZmanimCardLight extends CardWithList {
                     }
                     mObjects.add(new ZmanimObject(this, res.getString(R.string.tanis_end), res.getString(R.string.tanis_end_description), displayDate(czc.getTzaisGeonim5Point88Degrees())));
                 }
+
                 break;
             case Morning:
                 getCardHeader().setTitle(res.getString(R.string.zmanim_morning));
 
-                int alothashacr = Integer.valueOf(preferences.getString("options.alothashacr", "60"));
-                String description = String.format(res.getString(R.string.allot_hashchar_description), alothashacr);
-                switch (alothashacr){
-                    case 60:
-                        mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), description, displayDate(czc.getAlos60())));
-                        break;
-                    case 72:
-                        mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), description, displayDate(czc.getAlos72())));
-                        break;
-                    case 90:
-                        mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), description, displayDate(czc.getAlos90())));
-                        break;
-                    case 120:
-                        mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), description, displayDate(czc.getAlos120())));
-                        break;
-                }
+                addAlotHashacr(preferences, mObjects, czc, res);
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.tephilin_text), res.getString(R.string.tephilin_description), displayDate(czc.getMisheyakir11Point5Degrees())));
-                int sunrisePos = Integer.valueOf(preferences.getString("options.sunrise", "1"));
-                if (sunrisePos==1){
-                    mObjects.add(new ZmanimObject(this, res.getString(R.string.netz_hachama_text), res.getString(R.string.netz_hachama_description), displayDate(czc.getSeaLevelSunrise())));
+                addSunrise(preferences, mObjects, czc, res);
+
+                int zmainTephila = Integer.valueOf(preferences.getString(OPTIONS_ZMAIN_TEPHILA, "1"));
+                if (zmainTephila==1){
+                    mObjects.add(new ZmanimObject(this, res.getString(R.string.kiriyat_shema_text), res.getString(R.string.kiriyat_shema_description), displayDate(czc.getSofZmanShmaMGA())));
+                    mObjects.add(new ZmanimObject(this, res.getString(R.string.shacarit_text), res.getString(R.string.shacarit_description), displayDate(czc.getSofZmanTfilaMGA())));
+                    if (jewishCalendar.isErevYomTov() && jewishCalendar.getJewishMonth()==JewishDate.NISSAN) {
+                        mObjects.add(new ZmanimObject(this, res.getString(R.string.achilas_chametz_text), res.getString(R.string.achilas_chametz_description), displayDate(czc.getSofZmanAchilasChametzGRA())));
+                        mObjects.add(new ZmanimObject(this, res.getString(R.string.achilas_chametz_text), res.getString(R.string.achilas_chametz_description), displayDate(czc.getSofZmanBiurChametzGRA())));
+                    }
                 }
                 else{
-                    mObjects.add(new ZmanimObject(this, res.getString(R.string.netz_hachama_text), res.getString(R.string.netz_hachama_description), displayDate(czc.getSunrise())));
+                    mObjects.add(new ZmanimObject(this, res.getString(R.string.kiriyat_shema_gra_text), res.getString(R.string.kiriyat_shema_gra_description), displayDate(czc.getSofZmanShmaGRA())));
+                    mObjects.add(new ZmanimObject(this, res.getString(R.string.shacarit_text), res.getString(R.string.shacarit_description), displayDate(czc.getSofZmanTfilaGRA())));
+                    if (jewishCalendar.isErevYomTov() && jewishCalendar.getJewishMonth()==JewishDate.NISSAN) {
+                        mObjects.add(new ZmanimObject(this, res.getString(R.string.achilas_chametz_text), res.getString(R.string.achilas_chametz_description), displayDate(czc.getSofZmanAchilasChametzMGA72Minutes())));
+                        mObjects.add(new ZmanimObject(this, res.getString(R.string.biur_chametz_text), res.getString(R.string.biur_chametz_description), displayDate(czc.getSofZmanBiurChametzMGA72Minutes())));
+                    }
                 }
 
-                mObjects.add(new ZmanimObject(this, res.getString(R.string.kiriyat_shema_text), res.getString(R.string.kiriyat_shema_description), displayDate(czc.getSofZmanShmaMGA())));
-                mObjects.add(new ZmanimObject(this, res.getString(R.string.kiriyat_shema_gra_text), res.getString(R.string.kiriyat_shema_gra_description), displayDate(czc.getSofZmanShmaGRA())));
-                mObjects.add(new ZmanimObject(this, res.getString(R.string.shacarit_text), res.getString(R.string.shacarit_description), displayDate(czc.getSofZmanTfilaGRA())));
                 break;
             case Afternoon:
                 getCardHeader().setTitle(res.getString(R.string.zmanim_afternoon));
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.chaztot_text), res.getString(R.string.chaztot_description), displayDate(czc.getChatzos())));
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.mincha_gedola_text), res.getString(R.string.mincha_gedola_description), displayDate(czc.getMinchaGedola())));
-                mObjects.add(new ZmanimObject(this, res.getString(R.string.plag_mincha_text), res.getString(R.string.plag_mincha_description), displayDate(czc.getPlagHamincha())));
-                mObjects.add(new ZmanimObject(this, res.getString(R.string.shekia_text), res.getString(R.string.shekia_description), displayDate(czc.getSunset())));
+                addPlagMincha(preferences, mObjects, czc, res);
+                addSunset(preferences, mObjects, czc, res);
+
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.tzet_hacochavim_text), res.getString(R.string.tzet_hacochavim_description), displayDate(czc.getTzaisGeonim5Point88Degrees())));
+//                czc.getTzais()
+//                czc.getTzais60()
+//                czc.getTzais72()
+//                czc.getTzais90()
+//                czc.getTzais96()
+//                czc.getTzais120()
                 break;
             case Shabbat:
                 getCardHeader().setTitle(res.getString(R.string.zmanim_shabbat));
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.candle_lighting_text), String.format(res.getString(R.string.candle_lighting_description), (int) czc.getCandleLightingOffset()), displayDate(czc.getCandleLighting())));
-                mObjects.add(new ZmanimObject(this, res.getString(R.string.plag_mincha_text), res.getString(R.string.plag_mincha_shabat_text), displayDate(czc.getPlagHamincha())));
-                mObjects.add(new ZmanimObject(this, res.getString(R.string.shekia_text), res.getString(R.string.shekia_shabat_text), displayDate(czc.getSunset())));
+                addPlagMincha(preferences, mObjects, czc, res);
+                addSunset(preferences, mObjects, czc, res);
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.tzet_hacochavim_text), res.getString(R.string.tzet_hacochavim_shabat_text), displayDate(czc.getTzaisGeonim5Point88Degrees())));
                 break;
             case Special:
@@ -229,6 +238,68 @@ public class ZmanimCardLight extends CardWithList {
                 break;
         }
         return mObjects;
+    }
+
+    private void addSunrise(SharedPreferences preferences, List<ListObject> mObjects, ComplexZmanimCalendar czc, Resources res) {
+        int sunrisePos = Integer.valueOf(preferences.getString(OPTIONS_SUNRISE, "1"));
+        if (sunrisePos==1){
+            mObjects.add(new ZmanimObject(this, res.getString(R.string.netz_hachama_text), res.getString(R.string.netz_hachama_sea_description), displayDate(czc.getSeaLevelSunrise())));
+        }
+        else{
+            mObjects.add(new ZmanimObject(this, res.getString(R.string.netz_hachama_text), res.getString(R.string.netz_hachama_observed_description), displayDate(czc.getSunrise())));
+        }
+    }
+
+    private void addAlotHashacr(SharedPreferences preferences, List<ListObject> mObjects, ComplexZmanimCalendar czc, Resources res) {
+        int alothashacr = Integer.valueOf(preferences.getString(OPTIONS_ALOTHASHACR, "60"));
+        String description = String.format(res.getString(R.string.allot_hashchar_description), alothashacr);
+        switch (alothashacr){
+            case 60:
+                mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), description, displayDate(czc.getAlos60())));
+                break;
+            case 72:
+                mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), description, displayDate(czc.getAlos72())));
+                break;
+            case 90:
+                mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), description, displayDate(czc.getAlos90())));
+                break;
+            case 120:
+                mObjects.add(new ZmanimObject(this, res.getString(R.string.allot_hashchar_text), description, displayDate(czc.getAlos120())));
+                break;
+        }
+    }
+
+    private void addPlagMincha(SharedPreferences preferences, List<ListObject> mObjects, ComplexZmanimCalendar czc, Resources res) {
+        String description;
+        int plagMincha = Integer.valueOf(preferences.getString(OPTIONS_PLAG_MINCHA, "60"));
+        description = String.format(res.getString(R.string.plag_mincha_full_description),plagMincha);
+        switch (plagMincha){
+            case 60:
+                mObjects.add(new ZmanimObject(this, res.getString(R.string.plag_mincha_text), description, displayDate(czc.getPlagHamincha60Minutes())));
+                break;
+            case 72:
+                mObjects.add(new ZmanimObject(this, res.getString(R.string.plag_mincha_text), description, displayDate(czc.getPlagHamincha72Minutes())));
+                break;
+            case 90:
+                mObjects.add(new ZmanimObject(this, res.getString(R.string.plag_mincha_text), description, displayDate(czc.getPlagHamincha90Minutes())));
+                break;
+            case 96:
+                mObjects.add(new ZmanimObject(this, res.getString(R.string.plag_mincha_text), description, displayDate(czc.getPlagHamincha96Minutes())));
+                break;
+            case 120:
+                mObjects.add(new ZmanimObject(this, res.getString(R.string.plag_mincha_text), description, displayDate(czc.getPlagHamincha120Minutes())));
+                break;
+        }
+    }
+
+    private void addSunset(SharedPreferences preferences, List<ListObject> mObjects, ComplexZmanimCalendar czc, Resources res) {
+        int sunset = Integer.valueOf(preferences.getString(OPTIONS_SUNSET, "1"));
+        if (sunset==1){
+            mObjects.add(new ZmanimObject(this, res.getString(R.string.shekia_text), res.getString(R.string.shekia_sea_description), displayDate(czc.getSeaLevelSunset())));
+        }
+        else{
+            mObjects.add(new ZmanimObject(this, res.getString(R.string.shekia_text), res.getString(R.string.shekia_observed_description), displayDate(czc.getSunset())));
+        }
     }
 
     @Override

@@ -61,8 +61,21 @@
     <string name="zman_tzizit_text">זמן ציצית</string>
     <string name="zman_tzizit_description">Sun is 11.5 degress beloow the horizon.\r\n
     You are allow to put on tephilin</string>
+
+    <string name="zman_tephila_text">זמני תפילה</string>
+    <string name="zman_tephila_description">זמני תפילת היום</string>
+
+    <string name="achilas_chametz_text">סוף זמן אכילת חמץ</string>
+    <string name="achilas_chametz_description">סוף זמן אכילת חמץ</string>
+
+    <string name="biur_chametz_text">זמן ביעור חמץ</string>
+    <string name="biur_chametz_description">סוף זמן ביעור חמץ</string>
+
     <string name="netz_hachama_text">נץ החמה</string>
     <string name="netz_hachama_description">רגע שבו נראית בוודאות הנקודה הראשונה מגוף השמש</string>
+    <string name="netz_hachama_sea_description">רגע שבו נראית בוודאות הנקודה הראשונה מגוף השמש במישור</string>
+    <string name="netz_hachama_observed_description">רגע שבו נראית בוודאות הנקודה הראשונה מגוף השמש הנראה</string>
+
     <string name="tephilin_text">זמן הנחת תפילין</string>
     <string name="tephilin_description">משיכיר חברו</string>
     <string name="kiriyat_shema_text">קריאת שמע</string>
@@ -79,8 +92,12 @@
     <string name="mincha_gedola_description">מנחה גדולה</string>
     <string name="plag_mincha_text">פלג מנחה</string>
     <string name="plag_mincha_description">תיחום הרבע האחרון של היום</string>
+    <string name="plag_mincha_full_description">פלג מנחה %d דקות</string>
     <string name="shekia_text">שקיעה</string>
     <string name="shekia_description">שקיעה</string>
+    <string name="shekia_sea_description">שקיעה במישור</string>
+    <string name="shekia_observed_description">שקיעה הנראה</string>
+
     <string name="tzet_hacochavim_text">צאת הכוכבים</string>
     <string name="tzet_hacochavim_description">צאת הכוכבים</string>
     <string name="tzet_hacochavim_shabat_text">צאת שבת</string>
