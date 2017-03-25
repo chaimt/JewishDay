@@ -220,7 +220,7 @@ public class ZmanimCardLight extends CardWithList {
                 mObjects.add(new ZmanimObject(this, res.getString(R.string.candle_lighting_text), String.format(res.getString(R.string.candle_lighting_description), (int) czc.getCandleLightingOffset()), displayDate(czc.getCandleLighting())));
                 addPlagMincha(preferences, mObjects, czc, res);
                 addSunset(preferences, mObjects, czc, res);
-                mObjects.add(new ZmanimObject(this, res.getString(R.string.tzet_hacochavim_text), res.getString(R.string.tzet_hacochavim_shabat_text), displayDate(czc.getTzaisGeonim5Point88Degrees())));
+                mObjects.add(new ZmanimObject(this, res.getString(R.string.tzet_hacochavim_text), res.getString(R.string.tzet_hacochavim_shabat_text), displayDate(czc.getTzaisGeonim8Point5Degrees())));
                 break;
             case Special:
                 getCardHeader().setTitle(res.getString(R.string.zmanim_special));
