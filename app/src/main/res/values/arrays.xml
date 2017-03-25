@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="alothashacr_entry_list">
-        <item>60 minutes before sunrise</item>
-        <item>72 minutes before sunrise</item>
-        <item>90 minutes before sunrise</item>
-        <item>120 minutes before sunrise</item>
-    </string-array>
     <string-array name="alothashacr_entry_values">
         <item>60</item>
         <item>72</item>
         <item>90</item>
         <item>120</item>
     </string-array>
-
-    <string-array name="sun_level_entry_list">
-        <item>Sea Level</item>
-        <item>Observed Level</item>
+    <string-array name="alothashacr_entry_list">
+        <item>60 minutes before sunrise</item>
+        <item>72 minutes before sunrise</item>
+        <item>90 minutes before sunrise</item>
+        <item>120 minutes before sunrise</item>
     </string-array>
+
     <string-array name="sun_level_entry_values">
         <item>1</item>
         <item>2</item>
     </string-array>
-
-    <string-array name="zman_tephila_entry_list">
-        <item>MGA</item>
-        <item>GRA</item>
+    <string-array name="sun_level_entry_list">
+        <item>Sea Level</item>
+        <item>Observed Level</item>
     </string-array>
+
     <string-array name="zman_tephila_entry_values">
         <item>1</item>
         <item>2</item>
+    </string-array>
+    <string-array name="zman_tephila_entry_list">
+        <item>MGA</item>
+        <item>GRA</item>
     </string-array>
 
     <string-array name="plag_mincha_entry_list">

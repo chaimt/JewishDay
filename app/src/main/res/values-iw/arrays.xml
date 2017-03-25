@@ -14,22 +14,22 @@
         <item>120 דקות לפני חצות</item>
     </string-array>
 
-    <string-array name="netz_hachama_entry_list">
-        <item>הנץ במישור</item>
-        <item>הנץ הנראה</item>
-    </string-array>
-    <string-array name="netz_hachama_entry_values">
+    <string-array name="sun_level_entry_values">
         <item>1</item>
         <item>2</item>
     </string-array>
-
-    <string-array name="zman_tephila_entry_list">
-        <item>מגן אברהם</item>
-        <item>גר״א</item>
+    <string-array name="sun_level_entry_list">
+        <item>אופק ים</item>
+        <item>אופק נראה</item>
     </string-array>
+
     <string-array name="zman_tephila_entry_values">
         <item>1</item>
         <item>2</item>
+    </string-array>
+    <string-array name="zman_tephila_entry_list">
+        <item>מגן אברהם</item>
+        <item>גר״א</item>
     </string-array>
 
     <string-array name="plag_mincha_entry_list">
