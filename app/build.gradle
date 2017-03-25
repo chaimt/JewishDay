@@ -29,15 +29,15 @@ android {
     signingConfigs {
         debug {
             storeFile file('../../app.keystore')
-            keyAlias "cyturel"
-            storePassword "yehova"
-            keyPassword "yehova"
+            keyAlias "known"
+            storePassword "known"
+            keyPassword "known"
         }
         release {
             storeFile file('../../app.keystore')
-            keyAlias "cyturel"
-            storePassword "yehova"
-            keyPassword "yehova"
+            keyAlias "known"
+            storePassword "known"
+            keyPassword "known"
         }
     }
     compileOptions {
