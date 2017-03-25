@@ -71,7 +71,7 @@
     <string name="biur_chametz_text">זמן ביעור חמץ</string>
     <string name="biur_chametz_description">סוף זמן ביעור חמץ</string>
 
-    <string name="netz_hachama_text">נץ החמה</string>
+    <string name="netz_hachama_text">הנץ החמה</string>
     <string name="netz_hachama_description">רגע שבו נראית בוודאות הנקודה הראשונה מגוף השמש</string>
     <string name="netz_hachama_sea_description">רגע שבו נראית בוודאות הנקודה הראשונה מגוף השמש במישור</string>
     <string name="netz_hachama_observed_description">רגע שבו נראית בוודאות הנקודה הראשונה מגוף השמש הנראה</string>
