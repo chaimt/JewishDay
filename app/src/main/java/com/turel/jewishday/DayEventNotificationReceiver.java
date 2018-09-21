@@ -15,7 +15,7 @@ public class DayEventNotificationReceiver extends BroadcastReceiver {
 
         AppSettings.getInstance().updateLocalLanguage(context);
         AppSettings.getInstance().checkToDisplayDateNotification();
-        AppSettings.getInstance().displayTimeNotificaitons();
+        AppSettings.getInstance().displayTimeNotifications();
         AppSettings.getInstance().setNextDayAlarm();
         AppSettings.getInstance().setNextTimeNotificaitons();
     }

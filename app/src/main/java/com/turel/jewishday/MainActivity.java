@@ -10,7 +10,6 @@ import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -54,7 +53,6 @@ public class MainActivity extends AppCompatActivity
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
-    private Toolbar mToolbar;
 
     private int currentPos = -1;
 
@@ -70,34 +68,30 @@ public class MainActivity extends AppCompatActivity
         if (android.os.Build.VERSION.SDK_INT >= 25) {
             ShortcutManager shortcutManager = this.getSystemService(ShortcutManager.class);
 
-//            if (shortcutManager.getDynamicShortcuts().size() == 0) {
+            final Intent berachotIntent = new Intent(this, MainActivity.class);
+            berachotIntent.setAction(Intent.ACTION_VIEW);
+            berachotIntent.putExtra("fragment", "Kotel");
 
-                final Intent berachotIntent = new Intent(this, MainActivity.class);
-                berachotIntent.setAction(Intent.ACTION_VIEW);
-                berachotIntent.putExtra("fragment", "Kotel");
+            ShortcutInfo shortcutMizrach = new ShortcutInfo.Builder(this, "Kotel")
+                    .setShortLabel(getString(R.string.kotel_shortcutShortLabel))
+                    .setLongLabel(getString(R.string.kotel_shortcutLongLabel))
+                    .setIcon(Icon.createWithResource(this, R.drawable.ic_action_compass))
+                    .setIntent(berachotIntent)
+                    .build();
 
+            final Intent zmanimIntent = new Intent(this, MainActivity.class);
+            zmanimIntent.setAction(Intent.ACTION_VIEW);
+            zmanimIntent.putExtra("fragment", "ZmanimFragment");
 
-                ShortcutInfo shortcutMizrach = new ShortcutInfo.Builder(this, "Kotel")
-                        .setShortLabel(getString(R.string.kotel_shortcutShortLabel))
-                        .setLongLabel(getString(R.string.kotel_shortcutLongLabel))
-                        .setIcon(Icon.createWithResource(this, R.drawable.ic_action_compass))
-                        .setIntent(berachotIntent)
-                        .build();
+            ShortcutInfo shortcutZmanim = new ShortcutInfo.Builder(this, "ZmanimFragment")
+                    .setShortLabel(getString(R.string.zmanim_shortcutShortLabel))
+                    .setLongLabel(getString(R.string.zmanim_shortcutLongLabel))
+                    .setIcon(Icon.createWithResource(this, R.drawable.ic_dialog_time))
+                    .setIntent(zmanimIntent)
+                    .build();
 
-                final Intent zmanimIntent = new Intent(this, MainActivity.class);
-                zmanimIntent.setAction(Intent.ACTION_VIEW);
-                zmanimIntent.putExtra("fragment", "ZmanimFragment");
-
-                ShortcutInfo shortcutZmanim = new ShortcutInfo.Builder(this, "ZmanimFragment")
-                        .setShortLabel(getString(R.string.zmanim_shortcutShortLabel))
-                        .setLongLabel(getString(R.string.zmanim_shortcutLongLabel))
-                        .setIcon(Icon.createWithResource(this, R.drawable.ic_dialog_time))
-                        .setIntent(zmanimIntent)
-                        .build();
-
-                shortcutManager.setDynamicShortcuts(Arrays.asList(shortcutMizrach, shortcutZmanim));
-            }
-//        }
+            shortcutManager.setDynamicShortcuts(Arrays.asList(shortcutMizrach, shortcutZmanim));
+        }
     }
 
     private void viewFragment(String fragment) {
@@ -127,14 +121,13 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         AppSettings.getInstance().updateLocalLanguage(this);
         setContentView(R.layout.activity_main);
-        mToolbar = findViewById(R.id.toolbar_actionbar);
+        final Toolbar mToolbar = findViewById(R.id.toolbar_actionbar);
         setSupportActionBar(mToolbar);
 
-        mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getFragmentManager().findFragmentById(R.id.fragment_drawer);
+        mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.fragment_drawer);
 
         // Set up the drawer.
-        mNavigationDrawerFragment.setup(R.id.fragment_drawer, (DrawerLayout) findViewById(R.id.drawer), mToolbar);
+        mNavigationDrawerFragment.setup(R.id.fragment_drawer, findViewById(R.id.drawer), mToolbar);
         // populate the navigation drawer
         mNavigationDrawerFragment.setUserData(getString(R.string.menu_title), getString(R.string.menu_title_sub), BitmapFactory.decodeResource(getResources(), R.drawable.avatar));
 
@@ -296,7 +289,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Log.d(TAG, "onConnectionFailed: " + connectionResult.toString());
         firstRequest = false;
     }

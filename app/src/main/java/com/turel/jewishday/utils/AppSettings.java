@@ -3,6 +3,7 @@ package com.turel.jewishday.utils;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -69,7 +70,7 @@ public class AppSettings {
     private boolean displayNotification = true;
     private boolean displaySmartNotification = true;
 
-
+    public static final String CHANNEL_ID = "DATE";
     protected static final int DISPLAY_DATE_ID = 1;
     public static final int DISPLAY_REMINDER_ID = 2;
 
@@ -92,6 +93,7 @@ public class AppSettings {
         address = context.getString(R.string.address_unknown);
 
         loadSettings(context);
+        createNotificationChannel();
     }
 
     public static boolean isLocaleHebrew = Locale.getDefault().getLanguage().equals("he") || Locale.getDefault().getLanguage().equals("iw");
@@ -210,7 +212,6 @@ public class AppSettings {
         editor.apply();
     }
 
-
     public void updateAddress(String message) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = prefs.edit();
@@ -263,7 +264,7 @@ public class AppSettings {
         displayDateNotification();
     }
 
-    public void displayTimeNotificaitons() {
+    public void displayTimeNotifications() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         Boolean reminderUse = preferences.getBoolean(REMINDER_USE, false);
         if (reminderUse) {
@@ -274,10 +275,13 @@ public class AppSettings {
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
                     intent, PendingIntent.FLAG_CANCEL_CURRENT);
 
-            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context).setSmallIcon(R.drawable.luach)
+            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context,CHANNEL_ID).setSmallIcon(R.drawable.luach)
                     .setContentTitle(title).setContentText(description)
                     .setDefaults(Notification.DEFAULT_VIBRATE | Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND)
                     .setContentIntent(pendingIntent)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                    .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                     .setAutoCancel(false);
             NotificationManager mNotificationManager = (NotificationManager) context
                     .getSystemService(Context.NOTIFICATION_SERVICE);
@@ -424,18 +428,31 @@ public class AppSettings {
 
     }
 
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = context.getString(R.string.channel_name);
+            String description = context.getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
     public void displayDateNotification() {
         updateLocalLanguage(context);
         Intent intent = new Intent(context, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
-                intent, PendingIntent.FLAG_CANCEL_CURRENT);
-
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         AddressInfo addressInfo = getAddressInfo();
         HebrewDateFormatter formatter = getHebrewDateFormatter();
         ComplexZmanimCalendar czc = getZmanimData(addressInfo.getAddress(), addressInfo.getLatitude(), addressInfo.getLongitude(), addressInfo.getAltitude(), addressInfo.getZone());
         JewishCalendar jewishCalendar = getJewishCalendarByTime();
-
 
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.notificationmain);
         remoteViews.setImageViewResource(R.id.notifimage, R.drawable.luach);
@@ -468,18 +485,23 @@ public class AppSettings {
             }
         }
 
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
-                .setSmallIcon(monthPos)
+        if (monthPos == R.drawable.ic_month_00){
+            monthPos = R.drawable.ic_day_01 + jewishCalendar.getJewishDayOfMonth()-1;
+        }
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context,CHANNEL_ID)
+                .setSmallIcon(monthPos,jewishCalendar.getJewishDayOfMonth())
                 .setContent(remoteViews)
                 .setAutoCancel(false)
                 .setContentIntent(pendingIntent)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                .setShowWhen(true)
                 .setOngoing(true);
-        NotificationManager mNotificationManager = (NotificationManager) context
-                .getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         Notification notif = mBuilder.build();
-
-        notif.iconLevel = jewishCalendar.getJewishDayOfMonth();
+        //notif.iconLevel = jewishCalendar.getJewishDayOfMonth();
         mNotificationManager.notify(DISPLAY_DATE_ID, notif);
     }
 

@@ -192,4 +192,9 @@
     <string name="zmanim_shortcutShortLabel">Zmanim</string>
     <string name="zmanim_shortcutLongLabel">View Zmanim</string>
 
+
+    <string name="channel_name">Jewish Date</string>
+    <string name="channel_description">Display Daily Jewish Date</string>
+
+
 </resources>
