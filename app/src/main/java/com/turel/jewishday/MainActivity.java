@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         AppSettings.getInstance().updateLocalLanguage(this);
         setContentView(R.layout.activity_main);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        mToolbar = findViewById(R.id.toolbar_actionbar);
         setSupportActionBar(mToolbar);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
