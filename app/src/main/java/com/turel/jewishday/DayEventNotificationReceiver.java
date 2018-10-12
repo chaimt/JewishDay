@@ -12,7 +12,6 @@ import com.turel.jewishday.utils.AppSettings;
 public class DayEventNotificationReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-
         AppSettings.getInstance().updateLocalLanguage(context);
         AppSettings.getInstance().checkToDisplayDateNotification();
         AppSettings.getInstance().displayTimeNotifications();

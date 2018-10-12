@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.ACTION_TIMEZONE_CHANGED" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -26,6 +25,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
         <receiver android:name=".OnetimeAlarmReceiver"
@@ -33,9 +33,10 @@
             <intent-filter>
                 <action android:name="SET_JEWISH_DATE"/>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
-                <action android:name="android.intent.action.ACTION_DATE_CHANGED"/>
-                <action android:name="android.intent.action.ACTION_TIME_CHANGED"/>
-                <action android:name="android.intent.action.ACTION_TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+
             </intent-filter>
         </receiver>
 
@@ -44,9 +45,9 @@
             <intent-filter>
                 <action android:name="JEWISH_REMINDER"/>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
-                <action android:name="android.intent.action.ACTION_DATE_CHANGED"/>
-                <action android:name="android.intent.action.ACTION_TIME_CHANGED"/>
-                <action android:name="android.intent.action.ACTION_TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
             </intent-filter>
         </receiver>
         <service
